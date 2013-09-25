@@ -1,0 +1,35 @@
+<?php
+/**
+ * @file
+ * Provides a simple custom entity type named 'video' for tracking embed codes.
+ */
+
+/**
+ * Implements hook_entity_info().
+ */
+function videoentity_entity_info() {
+  $info = array();
+  // Our custom video entity needs to be defined here.
+  // See http://drupal.org/node/1026420 and http://drupal.org/node/878804
+  // for more documentation.
+  //
+
+  $info['video'] = array(
+    // Nome do label!
+    'label' => t('Video'),
+    // Video table
+    'base table' => 'videoentity_video',
+    // Ajuda Entity API a saber como a query deve se comportar
+    'entity keys' => array(
+      'id' => 'id',
+      'label' => 'name',
+      'type' => 'type',
+    ),
+
+  );
+
+  return $info;
+}
+
+
+
