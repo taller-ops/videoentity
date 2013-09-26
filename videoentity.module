@@ -25,11 +25,21 @@ function videoentity_entity_info() {
       'label' => 'name',
       'type' => 'type',
     ),
-
+    // 'entity class' => 'VieoEntity',
+    'controller class' => 'VideoEntityController',
   );
 
   return $info;
 }
 
+/**
+ * Implements hook_init().
+ */
+function videoentity_init() {
+  $video = entity_load('video', array(1));
+  $video_view = entity_view('video', $video);
+  dsm($video, 'entity');
+  dsm($video_view, 'entity view');
+}
 
 
